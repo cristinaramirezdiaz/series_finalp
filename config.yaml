@@ -1,0 +1,35 @@
+# Project settings
+project:
+  name: My Movie Recommendation System
+
+# Paths configuration
+paths:
+  functions: "notebooks/functions.py"
+  data_raw: "data/raw_data.csv"            
+  data_cleaned: "data/clean_data/series.csv"
+  main_notebook: "notebooks/main.ipynb"
+  main_test_notebook: "notebooks/main_test.ipynb"
+  pinecone_setup_notebook: "notebooks/pinecone_setup.ipynb"
+  embedding_notebook: "notebooks/embedding.ipynb"
+  images: "resources/"                      
+  app: "app.py"                            
+  config_toml: ".streamlit/config.toml"    
+
+
+# Data cleaning settings
+data_cleaning:
+  drop_na: true
+  drop_duplicates: true
+
+# Picone configuration
+pinecone:
+  api_key: <YOUR_PINECONE_API_KEY>
+  environment: <us-east-1>
+  index: <series>
+# Streamlit configuration
+streamlit:
+  port: 8501
+
+# Other settings
+warnings:
+  filter: "ignore"

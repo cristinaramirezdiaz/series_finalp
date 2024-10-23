@@ -1,0 +1,10 @@
+pandas == 2.2.2
+numpy == 1.26.4
+matplotlib == 3.9.2
+seaborn == 0.13.2
+wordcloud == 1.9.3
+sentence-transformers == 3.2.1
+pinecone-client == 5.0.1
+python == 3.11.8
+python-dotenv == 1.0.1
+streamlit == 1.39.0
