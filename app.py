@@ -67,20 +67,47 @@ def get_top_series_by_genre_and_subgenre(genre, subgenres, n=10):
     return top_series.to_dict('records')
 
 # Función para obtener la historia de la empresa
+import streamlit as st
+
+import streamlit as st
+
 def get_company_history():
-    return """
-    Bienvenido a nuestra plataforma de recomendación de series. 
-    Nuestra misión es ayudar a los amantes de las series a encontrar nuevas joyas y disfrutar de contenido de calidad. 
-    Fundada en 2023, nuestra empresa se basa en la tecnología de IA para ofrecerte las mejores recomendaciones personalizadas.
-    """
+    # Título
+    st.markdown("### Bienvenido a nuestra plataforma de recomendación de series, un proyecto de la **Fundación HC Bank**.")
+    
+    # Explicación sobre la Fundación HC Bank
+    st.markdown("""
+    La **Fundación HC Bank** es una iniciativa del **HC Bank** que busca fomentar el acceso a la cultura y el entretenimiento para personas de todas las edades. 
+    Nació con el propósito de difundir la cultura y conectar generaciones a través de diversas formas de expresión artística, 
+    utilizando la tecnología para llevar el contenido cultural de una manera innovadora y accesible.
+    """)
+    
+    # Mostrar el logo centrado
+    st.markdown('<div style="text-align: center;"><img src="resources/logo_hcbank.jpeg" alt="HC Bank Logo" width="200"></div>', unsafe_allow_html=True)
+
+    # Resto del texto
+    st.markdown("""
+    Este proyecto nace en 2024 como parte de nuestro compromiso con la difusión cultural, utilizando la tecnología más avanzada para ofrecer una experiencia única. 
+    A través de nuestra plataforma, queremos facilitar el descubrimiento de contenido audiovisual de calidad, adaptado a los gustos y emociones de cada usuario.
+
+    Con la ayuda de la inteligencia artificial y herramientas de recomendación, nuestra app te sugiere contenido basado en tus preferencias, para que disfrutes de nuevas joyas y expandas tus horizontes culturales. 
+    ¡Gracias por unirte a nosotros en este viaje cultural! Esperamos que encuentres tu próxima serie favorita.
+    """)
+
+
+
 
 # Interfaz de usuario en Streamlit
 st.title("🛋️🎉 Aventuras en el Sofá: ¡Maratones Épicos! 🍿🎬")
 # Agregar una imagen en la barra lateral
 st.sidebar.image("resources/princess_photo.jpeg", caption="🎬Your next adventure in entertainment starts here!🍿", use_column_width=True)
 # Navegación de páginas
-page = st.sidebar.radio("Select a page", ["Our Story", "Top 10 Series", "Moods", "Recommender"])
+page = st.sidebar.radio("Select a page", ["Our Story", "Top 10", "Moods", "Recommender"])
 
+st.sidebar.markdown("<br>" * 2, unsafe_allow_html=True)
+# Agregar una imagen en la barra lateral
+logo_url = "resources/logo_hcbank.jpeg"
+st.sidebar.image(logo_url, width=100)
 
 if page == "Recommender":
     st.markdown("""
@@ -116,7 +143,7 @@ if page == "Recommender":
                     st.markdown("---")
         else:
             st.warning("Please enter a search term.")
-elif page == "Top 10 Series":
+elif page == "Top 10":
     st.markdown("""
     ### Top 10 Series
     Discover the best series according to your preferences! 
@@ -139,7 +166,29 @@ elif page == "Top 10 Series":
             st.markdown("---")  # Línea horizontal separadora
 
 elif page == "Our Story":
-    st.write(get_company_history())
+    ## st.write(get_company_history())
+     # Título
+    st.markdown("### Bienvenido a nuestra plataforma de recomendación de series, un proyecto de la **Fundación HC Bank**.")
+    
+    # Explicación sobre la Fundación HC Bank
+    st.markdown("""
+    La **Fundación HC Bank** es una iniciativa del **HC Bank** que busca fomentar el acceso a la cultura y el entretenimiento para personas de todas las edades. 
+    Nació con el propósito de difundir la cultura y conectar generaciones a través de diversas formas de expresión artística, 
+    utilizando la tecnología para llevar el contenido cultural de una manera innovadora y accesible.
+    """)
+    
+    # Mostrar el logo
+    st.image("resources/logo_hcbank.jpeg", width=200)
+
+    # Resto del texto
+    st.markdown("""
+    Este proyecto nace en 2024 como parte de nuestro compromiso con la difusión cultural, utilizando la tecnología más avanzada para ofrecer una experiencia única. 
+    A través de nuestra plataforma, queremos facilitar el descubrimiento de contenido audiovisual de calidad, adaptado a los gustos y emociones de cada usuario.
+
+    Con la ayuda de la inteligencia artificial y herramientas de recomendación, nuestra app te sugiere contenido basado en tus preferencias, para que disfrutes de nuevas joyas y expandas tus horizontes culturales. 
+    
+    ¡Gracias por unirte a nosotros en este viaje cultural! Esperamos que encuentres tu próxima serie favorita.
+    """)
 
 elif page == "Moods":
     st.markdown("""
