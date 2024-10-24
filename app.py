@@ -71,30 +71,6 @@ import streamlit as st
 
 import streamlit as st
 
-def get_company_history():
-    # Título
-    st.markdown("### Bienvenido a nuestra plataforma de recomendación de series, un proyecto de la **Fundación HC Bank**.")
-    
-    # Explicación sobre la Fundación HC Bank
-    st.markdown("""
-    La **Fundación HC Bank** es una iniciativa del **HC Bank** que busca fomentar el acceso a la cultura y el entretenimiento para personas de todas las edades. 
-    Nació con el propósito de difundir la cultura y conectar generaciones a través de diversas formas de expresión artística, 
-    utilizando la tecnología para llevar el contenido cultural de una manera innovadora y accesible.
-    """)
-    
-    # Mostrar el logo centrado
-    st.markdown('<div style="text-align: center;"><img src="resources/logo_hcbank.jpeg" alt="HC Bank Logo" width="200"></div>', unsafe_allow_html=True)
-
-    # Resto del texto
-    st.markdown("""
-    Este proyecto nace en 2024 como parte de nuestro compromiso con la difusión cultural, utilizando la tecnología más avanzada para ofrecer una experiencia única. 
-    A través de nuestra plataforma, queremos facilitar el descubrimiento de contenido audiovisual de calidad, adaptado a los gustos y emociones de cada usuario.
-
-    Con la ayuda de la inteligencia artificial y herramientas de recomendación, nuestra app te sugiere contenido basado en tus preferencias, para que disfrutes de nuevas joyas y expandas tus horizontes culturales. 
-    ¡Gracias por unirte a nosotros en este viaje cultural! Esperamos que encuentres tu próxima serie favorita.
-    """)
-
-
 
 
 # Interfaz de usuario en Streamlit
@@ -145,8 +121,8 @@ if page == "Recommender":
             st.warning("Please enter a search term.")
 elif page == "Top 10":
     st.markdown("""
-    ### Top 10 Series
-    Discover the best series according to your preferences! 
+    ### Top 10
+    Discover the best content according to your preferences! 
     You can select a main genre and even choose subgenres to narrow down your options. 
     Our top-rated recommendations will help you find the most acclaimed shows to watch.
     """)
@@ -166,7 +142,6 @@ elif page == "Top 10":
             st.markdown("---")  # Línea horizontal separadora
 
 elif page == "Our Story":
-    ## st.write(get_company_history())
      # Título
     st.markdown("### Bienvenido a nuestra plataforma de recomendación de series, un proyecto de la **Fundación HC Bank**.")
     
