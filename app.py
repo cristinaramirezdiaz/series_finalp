@@ -23,7 +23,7 @@ index = pc.Index('series')
 
 # Función de búsqueda
 def search_series(query, search_type, min_rating):
-    if search_type == 'Synopsis':
+    if search_type in ['Synopsis', 'Title']:
         # Genera un vector para la consulta
         vector = model.encode(query).tolist()
         # Realiza la búsqueda en Pinecone usando argumentos nombrados
@@ -48,11 +48,9 @@ def search_series(query, search_type, min_rating):
         return recommended_series
 
     # Lógica para buscar por título o autor (en este caso, autor se cambiará a 'Cast')
-    elif search_type == 'Title':
-        return df[df['Title'].str.contains(query, case=False)& (df['Rating'] >= min_rating)].to_dict('records')
+
     elif search_type == 'Cast':
         return df[df['Cast'].str.contains(query, case=False)& (df['Rating'] >= min_rating)].to_dict('records')
-
 
 
 
@@ -65,12 +63,6 @@ def get_top_series_by_genre_and_subgenre(genre, subgenres, n=10):
     filtered_series = filtered_series[filtered_series['Number of Votes'] >= 10000]
     top_series = filtered_series.nlargest(n, 'Rating')
     return top_series.to_dict('records')
-
-# Función para obtener la historia de la empresa
-import streamlit as st
-
-import streamlit as st
-
 
 
 # Interfaz de usuario en Streamlit
@@ -119,6 +111,8 @@ if page == "Recommender":
                     st.markdown("---")
         else:
             st.warning("Please enter a search term.")
+
+
 elif page == "Top 10":
     st.markdown("""
     ### Top 10
