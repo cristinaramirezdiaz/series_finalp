@@ -39,7 +39,7 @@ En este proyecto se utiliza un dataset sobre contenido audiovisual de **IMDb** �
 ## Links de Interés
 
 - [Link del Dataset en Kaggle](https://www.kaggle.com/datasets/suraj520/imdb-tv-series-data/data)
-- [Link a tu proyecto](link_a_tu_proyecto)
+- [Presentación del proyecto](https://www.canva.com/design/DAGUeh4_aBw/mdwdKWdZKoXnLKR8M4q6vA/view?utm_content=DAGUeh4_aBw&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 - [Documentación de Pinecone](https://docs.pinecone.io/)
 - [Streamlit Documentation](https://docs.streamlit.io/)
 
